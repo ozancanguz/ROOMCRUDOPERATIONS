@@ -13,7 +13,7 @@ import com.ozancanguz.roomcrudoperations.R
 import com.ozancanguz.roomcrudoperations.adapter.UserAdapter
 import com.ozancanguz.roomcrudoperations.data.UserViewModel
 import kotlinx.android.synthetic.main.fragment_list.*
-import kotlinx.android.synthetic.main.fragment_list.view.*
+
 
 
 class ListFragment : Fragment() {

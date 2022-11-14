@@ -1,11 +1,15 @@
 package com.ozancanguz.roomcrudoperations.adapter
 
+import android.support.v4.media.session.MediaSessionCompat.Token.fromBundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.Person.fromBundle
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.ozancanguz.roomcrudoperations.R
 import com.ozancanguz.roomcrudoperations.data.User
+import com.ozancanguz.roomcrudoperations.ui.ListFragmentDirections
 import kotlinx.android.synthetic.main.item_layout.view.*
 
 class UserAdapter:RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
@@ -32,6 +36,16 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         holder.itemView.lastnameText.text=userList[position].lastName
         holder.itemView.agetxt.text=userList[position].age
         holder.itemView.idtxt.text=userList[position].id.toString()
+
+
+           holder.itemView.rowlayout.setOnClickListener {
+
+               val args = ListFragmentDirections.actionListFragmentToUpdateFragment(currenUser)
+
+
+               holder.itemView.findNavController().navigate(action)
+
+           }
 
     }
 
